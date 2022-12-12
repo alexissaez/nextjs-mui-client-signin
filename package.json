@@ -1,0 +1,41 @@
+{
+    "name": "angelus-landing-page",
+    "version": "1.0.0",
+    "description": "Landing page of hogar angelus",
+    "main": "index.js",
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/alexissaez/angelus-landing-page.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/alexissaez/angelus-landing-page/issues"
+    },
+    "homepage": "https://github.com/alexissaez/angelus-landing-page#readme",
+    "dependencies": {
+        "@emotion/cache": "^11.10.5",
+        "@emotion/react": "^11.10.5",
+        "@emotion/server": "^11.10.0",
+        "@emotion/styled": "^11.10.5",
+        "@fontsource/roboto": "^4.5.8",
+        "@mui/icons-material": "^5.10.16",
+        "@mui/material": "^5.10.16",
+        "formik": "^2.2.9",
+        "next": "^13.0.6",
+        "prop-types": "^15.8.1",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "yup": "^0.32.11"
+    },
+    "devDependencies": {
+        "eslint": "^8.5.0",
+        "eslint-config-next": "^12.0.7"
+    }
+}

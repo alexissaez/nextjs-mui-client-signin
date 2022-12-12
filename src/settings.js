@@ -1,0 +1,2 @@
+export const API_URL=process.env.NEXT_PUBLIC_API_URL
+export const SPACE_URL=process.env.NEXT_PUBLIC_SPACE_URL
