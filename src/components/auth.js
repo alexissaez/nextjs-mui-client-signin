@@ -1,5 +1,5 @@
-import { login } from '../helpers/auth';
-import { setAuthUser, getAuthUser, clearAuthUser } from '../helpers/storageHelper'
+import { login } from '../services/auth';
+import { setAuthUser, getAuthUser, clearAuthUser } from '../services/storageHelper'
 
 export class Auth {
 
