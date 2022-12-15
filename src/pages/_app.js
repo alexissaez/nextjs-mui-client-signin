@@ -12,7 +12,7 @@ import NavBar from '../components/navbar';
 
 const clientSideEmotionCache = createEmotionCache();
 
-const MyApp = (props) => {
+const App = (props) => {
     const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
 
     return (
@@ -34,9 +34,9 @@ const MyApp = (props) => {
     )
 }
 
-export default MyApp;
+export default App;
 
-MyApp.propTypes = {
+App.propTypes = {
     Component: PropTypes.elementType.isRequired,
     emotionCache: PropTypes.object,
     pageProps: PropTypes.object.isRequired,
