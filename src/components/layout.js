@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import { useAuth } from '../providers/AuthProvider'
 import { styled } from '@mui/material/styles';
 import { Box } from '@mui/material';
 import NavBar from './navbar'
+import Sidebar from './sidebar'
 
 const LayoutRoot = styled('div')(({ theme }) => ({
     display: 'flex',
@@ -15,6 +17,7 @@ const LayoutRoot = styled('div')(({ theme }) => ({
 
 export default function Layout({ children }) {
     const { user } = useAuth(true)
+    const [isSidebarOpen, setSidebarOpen] = useState(true);
 
     if (user) {
         return (
@@ -32,6 +35,10 @@ export default function Layout({ children }) {
                     </Box>
                 </LayoutRoot>
                 <NavBar onSidebarOpen={() => setSidebarOpen(true)} />
+                <Sidebar
+                    onClose={() => setSidebarOpen(false)}
+                    open={isSidebarOpen}
+                />
             </>
         )
     }

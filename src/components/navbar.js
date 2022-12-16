@@ -2,11 +2,9 @@ import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import { AppBar, Badge, Box, IconButton, Toolbar, Tooltip } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import SearchIcon from "@mui/icons-material/Search";
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import NextLink from "next/link";
 import LogoutIcon from "@mui/icons-material/Logout";
-import GroupIcon from '@mui/icons-material/Group';
 
 const NavBarRoot = styled(AppBar)(({ theme }) => ({
     backgroundColor: theme.palette.background.paper,
@@ -48,17 +46,13 @@ export default function NavBar(props) {
                     >
                         <MenuIcon fontSize="small" />
                     </IconButton>
-                    <Tooltip title="Search">
-                        <IconButton sx={{ ml: 1 }}>
-                            <SearchIcon fontSize="small" />
-                        </IconButton>
-                    </Tooltip>
+
+                    {/* left Side */}
+
                     <Box sx={{ flexGrow: 1 }} />
-                    <Tooltip title="Contacts">
-                        <IconButton sx={{ ml: 1 }}>
-                            <GroupIcon fontSize="small" />
-                        </IconButton>
-                    </Tooltip>
+
+                    {/* right Side */}
+
                     <Tooltip title="Notifications">
                         <IconButton sx={{ ml: 1 }}>
                             <Badge badgeContent={4}
