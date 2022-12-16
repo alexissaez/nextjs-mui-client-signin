@@ -6,7 +6,7 @@ import { ThemeProvider, CssBaseline } from '@mui/material';
 import { AuthGuard } from '../components/authGuard'
 import { AuthProvider } from '../providers/AuthProvider'
 import createEmotionCache from '../utility/createEmotionCache';
-import lightTheme from '../styles/theme/lightTheme';
+import { lightTheme } from '../styles/theme/lightTheme';
 import Layout from '../components/layout';
 
 

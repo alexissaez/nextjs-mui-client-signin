@@ -2,11 +2,11 @@ import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import { useRouter } from 'next/router';
-import { Box, Divider, Drawer, useMediaQuery, Avatar } from '@mui/material';
+import { Box, Divider, Drawer, useMediaQuery } from '@mui/material';
 import { NavItem } from './nav-item';
-import { getInitials } from '../handlers/get-initials';
 import { useAuth } from "../providers/AuthProvider"
-import { SPACE_URL } from '../settings'
+import NextLink from 'next/link';
+import { Logo } from './logo';
 
 
 const items = [
@@ -64,19 +64,21 @@ export default function SideBar(props) {
                 }}
             >
                 <div>
-                    <Box sx={{ flexGrow: 1, my: 3 }}>
-                        <NavItem
-                            key={'Cuenta'}
-                            icon={(<Avatar
-                                src={`${SPACE_URL}${user.avatar}`}
-                                sx={{ mr: 2 }}
-                            >
-                                {getInitials('Alexis Saez')}
-                            </Avatar>
-                            )}
-                            href={'/account'}
-                            title={user?.username ?? 'Cuenta'}
-                        />
+                    <Box sx={{ p: 3 }}>
+                        <NextLink
+                            href="/"
+                            passHref
+                            legacyBehavior
+                        >
+                            <a>
+                                <Logo
+                                    sx={{
+                                        height: 42,
+                                        width: 42
+                                    }}
+                                />
+                            </a>
+                        </NextLink>
                     </Box>
                 </div>
                 <Divider
