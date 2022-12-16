@@ -7,7 +7,7 @@ import { AuthGuard } from '../components/authGuard'
 import { AuthProvider } from '../providers/AuthProvider'
 import createEmotionCache from '../utility/createEmotionCache';
 import lightTheme from '../styles/theme/lightTheme';
-import NavBar from '../components/navbar';
+import Layout from '../components/layout';
 
 
 const clientSideEmotionCache = createEmotionCache();
@@ -20,14 +20,15 @@ const App = (props) => {
             <CacheProvider value={emotionCache}>
                 <ThemeProvider theme={lightTheme}>
                     <CssBaseline />
-                    {Component.public ? (
-                        <Component {...pageProps} />
-                    ) : (
-                        <AuthGuard>
-                            <NavBar />
-                            <Component {...pageProps} />
-                        </AuthGuard>
-                    )}
+                        <Layout>
+                            {Component.public ? (
+                                <Component {...pageProps} />
+                            ) : (
+                                <AuthGuard>
+                                    <Component {...pageProps} />
+                                </AuthGuard>
+                            )}
+                        </Layout>
                 </ThemeProvider>
             </CacheProvider>
         </AuthProvider>
