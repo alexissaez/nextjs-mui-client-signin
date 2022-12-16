@@ -11,9 +11,9 @@ const LayoutRoot = styled('div')(({ theme }) => ({
     maxWidth: '100%',
     paddingTop: 64,
     [theme.breakpoints.up('lg')]: {
-      paddingLeft: 280
+        paddingLeft: 280
     }
-  }));
+}));
 
 export default function Layout({ children }) {
     const { user } = useAuth(true)
