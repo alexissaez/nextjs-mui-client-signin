@@ -51,6 +51,10 @@ export default function Page() {
         return (<Loading text="Signing in progress" />)
     }
 
+    if (user) {
+        return (<Loading text="Application Loading" />)
+    }
+
     return (
         <>
             <Head>

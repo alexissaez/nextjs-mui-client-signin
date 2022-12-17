@@ -4,7 +4,7 @@ import { setRedirect, getRedirect, clearRedirect } from '../services/storageHelp
 
 const auth = new Auth()
 
-const pagesExuded = ['/login', '/logout']
+const pagesExuded = ['/login', '/logout', '/404']
 
 function _setRedirect(redirect) {
     setRedirect(
@@ -36,7 +36,7 @@ export function AuthProvider({ children }) {
       just a quick demo of resolving the initial user
     */
     useEffect(() => {
-        auth.resolveUser(2000).onAuthStateChanged((user, error) => {
+        auth.resolveUser().onAuthStateChanged((user, error) => {
             if (user) {
                 setUser(user)
                 setError(null)
