@@ -10,7 +10,7 @@ import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 import Stack from '@mui/material/Stack';
 
-export default function Login() {
+export default function Page() {
     const router = useRouter()
     const { auth, initializing, getRedirect, clearRedirect, user, error } = useAuth()
     const [signInInProgress, setSignInInProgress] = useState();
@@ -143,4 +143,4 @@ export default function Login() {
     )
 }
 
-Login.public = true;
+Page.public = true;
