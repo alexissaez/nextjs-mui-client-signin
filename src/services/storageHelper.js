@@ -16,12 +16,19 @@ export function clearRedirect() {
 }
 
 export function setAuthUser(AuthUser) {
-    window.localStorage.setItem(AUTH_USER_KEY, JSON.stringify(AuthUser))
+    if (AuthUser) {
+        window.localStorage.setItem(AUTH_USER_KEY, JSON.stringify(AuthUser))
+    }
 }
 
 export function getAuthUser() {
-    const user = window.localStorage.getItem(AUTH_USER_KEY)
-    return user ? JSON.parse(user) : null
+    try {
+        const user = window.localStorage.getItem(AUTH_USER_KEY)
+        return user ? JSON.parse(user) : null
+    }
+    catch (_) {
+        return null;
+    }
 }
 
 export function clearAuthUser() {
