@@ -1,6 +1,7 @@
+import { getAuthUser } from '../services/storageHelper'
+
 const getToken = () => {
-    const user = window?.localStorage?.getItem?.("user") ?? "{}";
-    const { token } = JSON.parse(user)
+    const { token } = getAuthUser() ?? {}
     return token
 }
 
